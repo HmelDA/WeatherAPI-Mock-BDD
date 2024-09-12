@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/current",
+    "queryParameters": {
+      "key": {
+        "absent": true
+      }
+    }
+  },
+  "response": {
+    "status": 400,
+    "body": "{ \"error\": { \"code\": 400, \"message\": \"Missing Parameters\" } }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

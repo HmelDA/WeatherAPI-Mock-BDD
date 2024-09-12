@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/incorrect_endpoint"
+  },
+  "response": {
+    "status": 404,
+    "body": "{ \"error\": { \"code\": 404, \"message\": \"Not Found\" } }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

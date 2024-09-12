@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/current",
+    "queryParameters": {
+      "key": {
+        "matching": "^(?!b4841befc1f54c8b86b114833241209$).*"
+      }
+    }
+  },
+  "response": {
+    "status": 401,
+    "body": "{ \"error\": { \"code\": 401, \"message\": \"Invalid API Key\" } }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/current",
+    "queryParameters": {
+      "q": {
+        "equalTo": "Tbilisi"
+      },
+      "key": {
+        "equalTo": "b4841befc1f54c8b86b114833241209"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "weather_api_tbilisi.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -22,4 +22,5 @@ The tests validate both positive and negative scenarios and generate detailed te
 
 ## Project structure 
 
-![Project Structure](WeatherAPI-Mock-BDD.jpg)
+### WeatherAPI-Mock-BDD
+![Project Structure](WeatherAPI-Mock-BDDv2.jpg)
