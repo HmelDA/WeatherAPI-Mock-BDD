@@ -4,7 +4,7 @@
     "urlPathPattern": "/current",
     "queryParameters": {
       "q": {
-        "matching": "^(?!ValidCityName$).*"
+        "doesNotMatch": "ValidCityName"
       }
     }
   },

@@ -36,29 +36,33 @@ public class WeatherApiNegativeSteps {
 
   @Then("I should receive an {string} error")
   public void iShouldReceiveError(String errorMessage) {
+    // Check the response status and error message depending on the error type
     switch (errorMessage) {
       case "Invalid API Key":
         response.then()
             .statusCode(401)
-            .body("error", equalTo("Invalid API key"));
+            .body("error.message", equalTo("Invalid API Key"));
         break;
       case "City Not Found":
         response.then()
             .statusCode(404)
-            .body("error", equalTo("City not found"));
+            .body("error.message", equalTo("City Not Found"));
         break;
       case "404 Not Found":
         response.then()
             .statusCode(404)
-            .body("error", equalTo("Not Found"));
+            .body("error.message", equalTo("Not Found"));
         break;
       case "400 Bad Request":
         response.then()
             .statusCode(400)
-            .body("error", equalTo("Bad Request"));
+            .body("error.message", equalTo("Bad Request"));
         break;
+      default:
+        throw new IllegalArgumentException("Unexpected error message: " + errorMessage);
     }
   }
+
 
   @When("I request the weather data for a non-existent city")
   public void iRequestWeatherDataForNonExistentCity() {
@@ -81,7 +85,6 @@ public class WeatherApiNegativeSteps {
   @When("I request the weather data with missing parameters")
   public void iRequestWeatherDataWithMissingParameters() {
     response = RestAssured.given()
-        .queryParam("key", "b4841befc1f54c8b86b114833241209")  // Missing city parameter
         .when()
         .get("/current");
   }

@@ -4,7 +4,7 @@
     "urlPathPattern": "/current",
     "queryParameters": {
       "key": {
-        "matching": "^(?!b4841befc1f54c8b86b114833241209$).*"
+        "doesNotMatch": "b4841befc1f54c8b86b114833241209"
       }
     }
   },

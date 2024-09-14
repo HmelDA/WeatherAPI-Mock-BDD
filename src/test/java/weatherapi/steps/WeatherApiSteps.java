@@ -29,18 +29,21 @@ public class WeatherApiSteps {
   @When("I request the current weather for {string}")
   public void iRequestTheCurrentWeatherFor(String city) {
     this.city = city;
-    // Make a GET request to the weather endpoint
+    // Убедитесь, что параметры запроса включены в правильном формате
     response = RestAssured.given()
+        .queryParam("q", city)
+        .queryParam("key", "b4841befc1f54c8b86b114833241209")
         .when()
-        .get("/weather?city=" + city);
+        .get("/current");
   }
+
 
   @Then("the response for {string} should contain weather data")
   public void theResponseForShouldContainWeatherData(String city) {
     // Verify the response status and body content
     response.then()
         .statusCode(200)
-        .body("city", equalTo(city))
+        .body("location", equalTo(city))
         .body("weather", notNullValue());
   }
 }
