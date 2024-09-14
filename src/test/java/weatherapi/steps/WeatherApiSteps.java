@@ -49,6 +49,18 @@ public class WeatherApiSteps {
         .statusCode(200)
         .body("location", equalTo(city))
         .body("weather", notNullValue());
+
+    // Getting actual values
+    String actualLocation = response.jsonPath().getString("location");
+    Object actualWeather = response.jsonPath().get("weather");
+
+    // Checking for discrepancies
+    if (!city.equals(actualLocation)) {
+      CustomLogger.error("Location mismatch: expected " + city + ", but got " + actualLocation);
+    }
+    if (actualWeather == null) {
+      CustomLogger.error("Weather data is missing for city: " + city);
+    }
     CustomLogger.info("Validation complete for city: " + city);
   }
 }
