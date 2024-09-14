@@ -4,17 +4,22 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * ProjectStructureDumper is a utility class to dump the structure of the project directory
+ * into a text file.
+ */
 public class ProjectStructureDumper {
 
   private static final String OUTPUT_FILE = "full_project_structure.txt";
 
   public static void main(String[] args) {
-    File rootDir = new File("src"); // Путь к корневой папке проекта
+    CustomLogger.info("Starting project structure dump...");
+    File rootDir = new File("src"); // Path to the root directory of the project
     try (FileWriter writer = new FileWriter(OUTPUT_FILE)) {
       listFiles(rootDir, writer, 0);
-      System.out.println("Project structure written to " + OUTPUT_FILE);
+      CustomLogger.info("Project structure written to " + OUTPUT_FILE);
     } catch (IOException e) {
-      e.printStackTrace();
+      CustomLogger.error("Error writing project structure to file.", e);
     }
   }
 
@@ -49,4 +54,3 @@ public class ProjectStructureDumper {
     }
   }
 }
-

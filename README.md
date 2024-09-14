@@ -4,6 +4,10 @@ It is a Java-based test project for testing a Weather API using WireMock and Cuc
 This project emulates API responses through mock servers instead of sending real HTTP requests to the weather service.
 The tests validate both positive and negative scenarios and generate detailed test reports using Allure.
 
+## How to run tests
+
+Tests are executed using the `CucumberTestRunner` class.
+
 ## Features
 
 - Mocking API responses with WireMock
@@ -23,4 +27,4 @@ The tests validate both positive and negative scenarios and generate detailed te
 ## Project structure 
 
 ### WeatherAPI-Mock-BDD
-![Project Structure](WeatherAPI-Mock-BDDv2.jpg)
+![Project Structure](WeatherAPI-Mock-BDDv3.jpg)
